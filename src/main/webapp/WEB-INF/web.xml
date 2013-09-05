@@ -13,7 +13,7 @@
   <servlet>
     <servlet-name>PepperCxfNonSpringServlet</servlet-name>
     <servlet-class>
-      com.pharmpress.pepper.PepperCxfNonSpringServlet
+      com.pharmpress.pepper.servlets.PepperCxfJaxrsServlet
     </servlet-class>
     <init-param>
       <param-name>jaxrs.serviceClasses</param-name>

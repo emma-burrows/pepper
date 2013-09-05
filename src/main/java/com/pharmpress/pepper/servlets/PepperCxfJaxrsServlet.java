@@ -9,5 +9,4 @@ import org.apache.cxf.jaxrs.servlet.CXFNonSpringJaxrsServlet;
 public class PepperCxfJaxrsServlet extends CXFNonSpringJaxrsServlet
 {
   private static final long serialVersionUID = 302911150801710190L;
-  //
 }
