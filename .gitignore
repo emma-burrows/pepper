@@ -1,0 +1,15 @@
+# Compiled Java classes
+*.class
+
+# Java archives
+*.jar
+*.war
+*.ear
+
+# Maven outputs
+target/
+
+# Eclipse
+.classpath
+.project
+.settings/
