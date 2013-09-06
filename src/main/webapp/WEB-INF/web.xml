@@ -21,6 +21,19 @@
         com.pharmpress.pepper.services.PepperCxfJaxrsService
       </param-value>
     </init-param>
+    <init-param>
+      <param-name>jaxrs.extensions</param-name>
+      <param-value>
+        xml=application/xml
+        json=application/json
+      </param-value>
+    </init-param>
+    <init-param>
+      <param-name>jaxrs.providers</param-name>
+      <param-value>
+        org.apache.cxf.jaxrs.provider.json.JSONProvider
+      </param-value>
+    </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
 
