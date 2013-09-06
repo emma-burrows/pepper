@@ -1,9 +1,4 @@
-/**
- * 
- */
 package com.pharmpress.pepper.resources;
-
-import static org.junit.Assert.*;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -12,6 +7,7 @@ import javax.xml.bind.Marshaller;
 import org.junit.Test;
 
 /**
+ * Implements tests for the {@link DrugResource} class.
  * @author Ross Laidlaw
  * @version $Id$
  */
