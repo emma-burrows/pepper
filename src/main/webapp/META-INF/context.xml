@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context docBase="/path/to/pepper.war" debug="5" reloadable="true"
-  crossContext="true">
+<Context docBase="/path/to/pepper.war" reloadable="true" crossContext="true">
 </Context>
