@@ -1,7 +1,5 @@
 /**
- * 
- */
-/**
+ * Contains service classes for the JAX-RS service.
  * @author Ross Laidlaw
  * @version $Id$
  */
