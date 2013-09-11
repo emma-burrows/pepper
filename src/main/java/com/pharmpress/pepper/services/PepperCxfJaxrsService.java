@@ -9,7 +9,6 @@ import com.pharmpress.pepper.resources.DrugResource;
 /**
  * A JAX-RS service class that handles HTTP requests.
  * @author Ross Laidlaw
- * @version $Id$
  */
 public class PepperCxfJaxrsService
 {

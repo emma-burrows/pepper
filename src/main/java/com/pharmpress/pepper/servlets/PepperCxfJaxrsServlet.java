@@ -3,8 +3,8 @@ package com.pharmpress.pepper.servlets;
 import org.apache.cxf.jaxrs.servlet.CXFNonSpringJaxrsServlet;
 
 /**
+ * The main servlet for the JAX-RS service.
  * @author Ross Laidlaw
- * @version $Id$
  */
 public class PepperCxfJaxrsServlet extends CXFNonSpringJaxrsServlet
 {
