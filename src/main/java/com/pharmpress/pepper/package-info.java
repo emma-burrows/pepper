@@ -1,5 +1,5 @@
 /**
+ * The parent package for the project.
  * @author Ross Laidlaw
- * @version $Id$
  */
 package com.pharmpress.pepper;

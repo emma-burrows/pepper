@@ -9,7 +9,6 @@ import org.junit.Test;
 /**
  * Implements tests for the {@link DrugResource} class.
  * @author Ross Laidlaw
- * @version $Id$
  */
 public class DrugResourceTest
 {

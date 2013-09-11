@@ -9,7 +9,6 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * A JAX-RS resource representing a drug.
  * @author Ross Laidlaw
- * @version $Id$
  */
 @XmlRootElement(name = "drug")
 @XmlType(propOrder = {"name"})
