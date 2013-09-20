@@ -22,6 +22,6 @@ public class PepperCxfJaxrsService
   @Produces({"application/xml", "application/json"})
   public DrugResource getDrug()
   {
-    return new DrugResource("aspirin");
+    return new DrugResource("paracetamol");
   }
 }
