@@ -7,18 +7,19 @@
 
   <display-name>Pepper</display-name>
   <description>
-    This is a demo web application with a RESTful service using Apache CXF.
+    A web application with demo servlets using either Spring MVC or Apache CXF
+    for RESTful web services.
   </description>
 
   <servlet>
     <servlet-name>PepperCxfNonSpringServlet</servlet-name>
     <servlet-class>
-      com.pharmpress.pepper.jaxrs.jaxrs.servlets.PepperCxfJaxrsServlet
+      com.pharmpress.pepper.jaxrs.servlets.PepperCxfJaxrsServlet
     </servlet-class>
     <init-param>
       <param-name>jaxrs.serviceClasses</param-name>
       <param-value>
-        com.pharmpress.pepper.jaxrs.jaxrs.services.PepperCxfJaxrsService
+        com.pharmpress.pepper.jaxrs.services.PepperCxfJaxrsService
       </param-value>
     </init-param>
     <init-param>
