@@ -1,4 +1,4 @@
-package com.pharmpress.pepper.resources;
+package com.pharmpress.pepper.jaxrs.resources;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

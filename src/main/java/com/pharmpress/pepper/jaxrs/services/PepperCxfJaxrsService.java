@@ -1,10 +1,10 @@
-package com.pharmpress.pepper.services;
+package com.pharmpress.pepper.jaxrs.services;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-import com.pharmpress.pepper.resources.DrugResource;
+import com.pharmpress.pepper.jaxrs.resources.DrugResource;
 
 /**
  * A JAX-RS service class that handles HTTP requests.
