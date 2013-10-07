@@ -2,4 +2,4 @@
  * Contains servlet classes for the JAX-RS service.
  * @author Ross Laidlaw
  */
-package com.pharmpress.pepper.servlets;
+package com.pharmpress.pepper.jaxrs.servlets;

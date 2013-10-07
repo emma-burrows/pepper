@@ -1,4 +1,4 @@
-package com.pharmpress.pepper.servlets;
+package com.pharmpress.pepper.jaxrs.servlets;
 
 import org.apache.cxf.jaxrs.servlet.CXFNonSpringJaxrsServlet;
 
