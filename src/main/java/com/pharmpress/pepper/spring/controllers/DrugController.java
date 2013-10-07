@@ -13,6 +13,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/drug")
 public class DrugController
 {
+  /**
+   * Returns a drug via the drug view.
+   * @param name the name of the drug (optional)
+   * @param model the model for the view
+   * @return the view to use
+   */
   @RequestMapping(method = RequestMethod.GET)
   public String getDrug(@RequestParam(value="name", required=false,
     defaultValue="aspirin") String name, Model model)
