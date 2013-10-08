@@ -7,64 +7,26 @@
 
   <display-name>Pepper</display-name>
   <description>
-    A web application with demo servlets using either Spring MVC or Apache CXF
-    for RESTful web services.
+    A web application using Spring MVC and Hibernate for RESTful web services.
   </description>
-
-  <servlet>
-    <servlet-name>PepperCxfNonSpringServlet</servlet-name>
-    <servlet-class>
-      com.pharmpress.pepper.jaxrs.servlets.PepperCxfJaxrsServlet
-    </servlet-class>
-    <init-param>
-      <param-name>jaxrs.serviceClasses</param-name>
-      <param-value>
-        com.pharmpress.pepper.jaxrs.services.PepperCxfJaxrsService
-      </param-value>
-    </init-param>
-    <init-param>
-      <param-name>jaxrs.extensions</param-name>
-      <param-value>
-        xml=application/xml
-        json=application/json
-      </param-value>
-    </init-param>
-    <init-param>
-      <param-name>jaxrs.providers</param-name>
-      <param-value>
-        org.apache.cxf.jaxrs.provider.json.JSONProvider
-      </param-value>
-    </init-param>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
 
   <servlet>
     <servlet-name>SpringMvcServlet</servlet-name>
     <servlet-class>
       org.springframework.web.servlet.DispatcherServlet
     </servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>
+        /WEB-INF/spring-dispatcher-servlet-configuration.xml
+      </param-value>
+    </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
-
-  <servlet-mapping>
-    <servlet-name>PepperCxfNonSpringServlet</servlet-name>
-    <url-pattern>/jaxrs/*</url-pattern>
-  </servlet-mapping>
 
   <servlet-mapping>
     <servlet-name>SpringMvcServlet</servlet-name>
     <url-pattern>/spring/*</url-pattern>
   </servlet-mapping>
-
-  <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/SpringMvcServlet-servlet.xml</param-value>
-  </context-param>
-
-  <listener>
-    <listener-class>
-      org.springframework.web.context.ContextLoaderListener
-    </listener-class>
-  </listener>
 
 </web-app>
