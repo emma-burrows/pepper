@@ -1,7 +1,5 @@
 package com.pharmpress.pepper.resources;
 
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +35,7 @@ public class DrugEntityTest
     Session session = sessionFactory.openSession();
     try
     {
-      String name = "acec";
+      String name = "aspirin";
       session.beginTransaction();
       Query query = session
         .createQuery("from DrugEntity where name like :name");
