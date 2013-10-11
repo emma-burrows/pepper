@@ -75,6 +75,13 @@
       <artifactId>jstl</artifactId>
       <version>1.2</version>
     </dependency>
+    
+    <!-- Apache Tiles for view templates -->
+    <dependency>
+      <groupId>org.apache.tiles</groupId>
+      <artifactId>tiles-extras</artifactId>
+      <version>3.0.0</version>
+    </dependency>
 
     <!-- Testing -->
     <dependency>
