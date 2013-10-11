@@ -22,7 +22,7 @@
     <init-param>
       <param-name>contextConfigLocation</param-name>
       <param-value>
-        /WEB-INF/spring-dispatcher-servlet-configuration.xml
+        /WEB-INF/spring/dispatcher-servlet-cfg.xml
       </param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
