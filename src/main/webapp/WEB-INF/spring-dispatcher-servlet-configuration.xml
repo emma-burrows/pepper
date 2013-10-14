@@ -13,9 +13,14 @@
   <context:component-scan
     base-package="com.pharmpress.pepper.spring.controllers"/>
 
-  <bean
-    class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    <property name="prefix" value="/WEB-INF/jsp/"/>
-    <property name="suffix" value=".jsp"/>
+  <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+    <!--Don't add suffix or prefix like you do with .jsp files-->
+    <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
+  </bean>
+  
+  <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer" >
+    <property name="definitions">
+      <value>/WEB-INF/tiles.xml</value>
+    </property>
   </bean>
 </beans>
