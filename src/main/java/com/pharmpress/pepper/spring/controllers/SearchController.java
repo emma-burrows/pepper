@@ -57,6 +57,7 @@ public class SearchController
         drugs.add((DrugEntity) object);
       }
       model.addAttribute("drugs", drugs);
+      model.addAttribute("title", "Search results");
       session.getTransaction().commit();
     }
     catch (RuntimeException e)
