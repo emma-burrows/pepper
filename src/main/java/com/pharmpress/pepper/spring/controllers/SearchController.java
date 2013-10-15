@@ -25,7 +25,7 @@ import com.pharmpress.pepper.resources.DrugEntity;
 @RequestMapping("/search")
 public class SearchController
 {
-  protected static Logger logger = Logger.getLogger("SearchController");
+  private static final Logger logger = Logger.getLogger("SearchController");
 
   /**
    * Returns a drug via the search view.
@@ -44,6 +44,8 @@ public class SearchController
     SessionFactory sessionFactory = configuration
       .buildSessionFactory(serviceRegistry);
 
+    logger.info("Searched for '" + name + "'");
+    
     // This is a read-only transaction, so perhaps the try...catch is
     // not needed here...
     Session session = sessionFactory.openSession();
@@ -62,7 +64,6 @@ public class SearchController
       model.addAttribute("drugs", drugs);
       model.addAttribute("title", "Search results");
       
-      logger.info("Searched for '" + name + "'");
       session.getTransaction().commit();
     }
     catch (RuntimeException e)
