@@ -3,6 +3,7 @@ package com.pharmpress.pepper.spring.controllers;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -24,6 +25,8 @@ import com.pharmpress.pepper.resources.DrugEntity;
 @RequestMapping("/search")
 public class SearchController
 {
+  private static final Logger logger = Logger.getLogger("SearchController");
+
   /**
    * Returns a drug via the search view.
    * @param name the name of the drug (optional)
@@ -41,6 +44,8 @@ public class SearchController
     SessionFactory sessionFactory = configuration
       .buildSessionFactory(serviceRegistry);
 
+    logger.info("Searched for '" + name + "'");
+    
     // This is a read-only transaction, so perhaps the try...catch is
     // not needed here...
     Session session = sessionFactory.openSession();
@@ -58,10 +63,12 @@ public class SearchController
       }
       model.addAttribute("drugs", drugs);
       model.addAttribute("title", "Search results");
+      
       session.getTransaction().commit();
     }
     catch (RuntimeException e)
     {
+      logger.error("Error retrieving data using search query '" + name + "': " + e.getMessage());
       session.getTransaction().rollback();
     }
     finally
