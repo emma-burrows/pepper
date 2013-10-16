@@ -68,7 +68,7 @@ public class SearchController
     }
     catch (RuntimeException e)
     {
-      logger.error("Error retrieving data using search query '" + name + "': " + e.getMessage());
+      logger.error("Error retrieving data using search query '" + name + "': ", e);
       session.getTransaction().rollback();
     }
     finally
