@@ -6,6 +6,7 @@
 <html>
   <head>
     <title>${title}</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
     <div id="header">
@@ -17,5 +18,6 @@
     <div id="footer">
       <tiles:insertAttribute name="footer" />
     </div>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
   </body>
 </html>
