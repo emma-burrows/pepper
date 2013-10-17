@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -16,14 +16,7 @@
       <div class="form-group">
         <input type="text" name="name" class="form-control" placeholder="Search">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-info">Submit</button>
     </form>
   </div><!-- /.navbar-collapse -->
 </nav>
-
-
-<h1></h1>
-    <form class="form-inline" action="search" method="get">
-      <input type="text" name="name" class="form-control" placeholder="search terms"/>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
