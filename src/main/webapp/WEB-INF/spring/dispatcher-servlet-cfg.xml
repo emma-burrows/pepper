@@ -10,17 +10,33 @@
     http://www.springframework.org/schema/mvc
     http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
+  <!-- Enable annotation-driven MVC configuration. -->
+  <mvc:annotation-driven/>
+
+  <!-- Automatically detect our controllers. -->
   <context:component-scan
     base-package="com.pharmpress.pepper.spring.controllers"/>
 
+  <!-- A view resolver to use with Apache Tiles. -->
   <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
     <!--Don't add suffix or prefix like you do with .jsp files-->
-    <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
+    <property name="viewClass"
+      value="org.springframework.web.servlet.view.tiles3.TilesView"/>
   </bean>
-  
-  <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer" >
+
+  <!-- Our configuration file for Apache Tiles. -->
+  <bean id="tilesConfigurer"
+    class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
     <property name="definitions">
       <value>/WEB-INF/tiles.xml</value>
     </property>
   </bean>
+
+  <!--
+    Map the DispatcherServlet to the web application's root, "/", without
+    affecting the container's default mappings, e.g. of other resources like
+    JSPs.
+  -->
+  <mvc:default-servlet-handler/>
+
 </beans>

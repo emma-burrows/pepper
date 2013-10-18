@@ -44,10 +44,8 @@ public class SearchController
     SessionFactory sessionFactory = configuration
       .buildSessionFactory(serviceRegistry);
 
-    logger.info("Searched for '" + name + "'");
-    
-    // This is a read-only transaction, so perhaps the try...catch is
-    // not needed here...
+    // This is a read-only transaction, so perhaps the try...catch isn't
+    // needed here...
     Session session = sessionFactory.openSession();
     try
     {
@@ -63,12 +61,13 @@ public class SearchController
       }
       model.addAttribute("drugs", drugs);
       model.addAttribute("title", "Search results");
-      
+
       session.getTransaction().commit();
     }
     catch (RuntimeException e)
     {
-      logger.error("Error retrieving data using search query '" + name + "': ", e);
+      logger.error("Error retrieving data using search query '" + name + "': ",
+        e);
       session.getTransaction().rollback();
     }
     finally
