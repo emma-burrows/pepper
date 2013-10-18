@@ -8,7 +8,7 @@
     <link href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/cerulean/bootstrap.min.css" rel="stylesheet">
     <link href="<c:url value='/resources/css/custom.css'/>" rel="stylesheet">
   </head>
-  <body>
+  <body style="padding-top: 70px; padding-bottom: 70px; padding-left: 1%; padding-right: 1%;">
     <header>
       <tiles:insertAttribute name="header" />
     </header>
@@ -18,6 +18,8 @@
     <footer>
       <tiles:insertAttribute name="footer" />
     </footer>
+    <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
   </body>
