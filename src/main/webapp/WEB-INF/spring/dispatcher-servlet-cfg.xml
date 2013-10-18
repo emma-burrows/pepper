@@ -38,5 +38,9 @@
     JSPs.
   -->
   <mvc:default-servlet-handler/>
-
+  
+  <!--
+    Map resources for use 
+   -->
+  <mvc:resources location="/resources/" mapping="/resources/**"/>
 </beans>

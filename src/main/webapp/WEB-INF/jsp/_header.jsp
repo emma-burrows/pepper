@@ -16,14 +16,7 @@
       <div class="form-group">
         <input type="text" name="name" class="form-control" placeholder="Search">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-info">Submit</button>
     </form>
   </div><!-- /.navbar-collapse -->
 </nav>
-
-
-<h1></h1>
-    <form class="form-inline" action="search" method="get">
-      <input type="text" name="name" class="form-control" placeholder="search terms"/>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
