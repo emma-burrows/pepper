@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:choose>
   <c:when test="${not empty drugs}">
     <c:set var="count" value="1" scope="page" />
@@ -12,7 +12,7 @@
             <h4 class="panel-title">
               <a class="accordion-toggle" data-toggle="collapse"
                 data-parent="#accordion" href="#drug${count}">
-                ${drug.name} </a>
+                ${drug.name}</a>
             </h4>
           </div>
           <div id="drug${count}" class="panel-collapse collapse">
@@ -21,6 +21,8 @@
                 <li>${drug.formula}</li>
                 <li>${drug.weight}</li>
               </ul>
+              <object data="/pepper/images/${drug.imageName}.svg"
+                type="image/svg+xml"></object>
             </div>
           </div>
         </div>

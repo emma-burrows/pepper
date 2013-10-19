@@ -14,6 +14,7 @@ public class DrugEntity
   private String name;
   private String formula;
   private String weight;
+  private String imageName;
 
   /**
    * Default constructor used by Hibernate.
@@ -60,6 +61,15 @@ public class DrugEntity
   }
 
   /**
+   * Gets the imageName.
+   * @return the imageName
+   */
+  public String getImageName()
+  {
+    return imageName;
+  }
+
+  /**
    * Sets the name.
    * @param name the name to set
    */
@@ -84,5 +94,14 @@ public class DrugEntity
   public void setWeight(String weight)
   {
     this.weight = weight;
+  }
+
+  /**
+   * Sets the imageName.
+   * @param imageName the imageName to set
+   */
+  public void setImageName(String imageName)
+  {
+    this.imageName = imageName;
   }
 }

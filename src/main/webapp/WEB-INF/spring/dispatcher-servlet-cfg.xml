@@ -38,9 +38,11 @@
     JSPs.
   -->
   <mvc:default-servlet-handler/>
-  
-  <!--
-    Map resources for use 
-   -->
-  <mvc:resources location="/resources/" mapping="/resources/**"/>
+
+  <!-- Map static resources. -->
+  <mvc:resources mapping="/css/**" location="/WEB-INF/static/css/"/>
+  <mvc:resources mapping="/images/**" location="/WEB-INF/static/images/"/>
+  <mvc:resources mapping="/javascript/**"
+    location="/WEB-INF/static/javascript/"/>
+
 </beans>
