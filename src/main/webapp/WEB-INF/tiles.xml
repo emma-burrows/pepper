@@ -15,4 +15,8 @@
     <definition name="search" extends="base.definition">
         <put-attribute name="body" value="/WEB-INF/jsp/search.jsp" />
     </definition>
+    
+    <definition name="index" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
+    </definition>
 </tiles-definitions>
