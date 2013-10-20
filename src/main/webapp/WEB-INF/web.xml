@@ -10,10 +10,6 @@
     A web application using Spring MVC and Hibernate for RESTful web services.
   </description>
 
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-  </welcome-file-list>
-
   <servlet>
     <servlet-name>SpringMvcServlet</servlet-name>
     <servlet-class>
