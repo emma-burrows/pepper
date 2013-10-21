@@ -21,8 +21,8 @@
                 <li>${drug.formula}</li>
                 <li>${drug.weight}</li>
               </ul>
-              <object data="/pepper/images/${drug.imageName}.svg"
-                type="image/svg+xml"></object>
+              <img src="/pepper/images/${drug.imageName}.svg"
+                width="300" height="200">
             </div>
           </div>
         </div>

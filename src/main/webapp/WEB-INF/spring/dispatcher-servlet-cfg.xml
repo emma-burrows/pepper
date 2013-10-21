@@ -40,9 +40,11 @@
   <mvc:default-servlet-handler/>
 
   <!-- Map static resources. -->
-  <mvc:resources mapping="/css/**" location="/WEB-INF/static/css/"/>
-  <mvc:resources mapping="/images/**" location="/WEB-INF/static/images/"/>
+  <mvc:resources mapping="/css/**"
+    location="/WEB-INF/static/css/" cache-period="31557600"/>
+  <mvc:resources mapping="/images/**"
+    location="/WEB-INF/static/images/" cache-period="31557600"/>
   <mvc:resources mapping="/javascript/**"
-    location="/WEB-INF/static/javascript/"/>
+    location="/WEB-INF/static/javascript/" cache-period="31557600"/>
 
 </beans>
