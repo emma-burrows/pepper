@@ -14,9 +14,9 @@
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <form class="navbar-form navbar-right" action="search" method="get" role="search">
       <div class="form-group">
-        <input type="text" name="name" class="form-control" placeholder="Search">
+        <input type="text" name="name" class="form-control" id="search-box" placeholder="Search">
       </div>
-      <button type="submit" class="btn btn-info">Submit</button>
+      <button type="submit" class="btn btn-info" id="search-submit">Submit</button>
     </form>
   </div><!-- /.navbar-collapse -->
 </nav>
