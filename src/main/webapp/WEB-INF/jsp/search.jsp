@@ -17,12 +17,21 @@
           </div>
           <div id="drug${count}" class="panel-collapse collapse">
             <div class="panel-body">
-              <ul>
-                <li>${drug.formula}</li>
-                <li>${drug.weight}</li>
-              </ul>
-              <img src="/pepper/images/${drug.imageName}.svg"
-                width="300" height="200">
+              <dl class="dl-horizontal">
+                <dt>formula</dt>
+                <dd class="formula">${drug.formula}</dd>
+                <dt>weight (g/mol)</dt>
+                <dd>${drug.weight}</dd>
+                <dt>ATC</dt>
+                <dd>${drug.atc}</dd>
+                <dt>UNII</dt>
+                <dd>${drug.unii}</dd>
+                <dt>structure</dt>
+                <dd>
+                  <img src="/pepper/images/${drug.imageName}.png"
+                    width="300">
+                </dd>
+              </dl>
             </div>
           </div>
         </div>

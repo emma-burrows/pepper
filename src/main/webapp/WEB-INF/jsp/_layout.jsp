@@ -20,5 +20,6 @@
     </footer>
     <script src="/pepper/javascript/jquery-2.0.3.min.js"></script>
     <script src="/pepper/javascript/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script src="/pepper/javascript/formula.js"></script>
   </body>
 </html>
