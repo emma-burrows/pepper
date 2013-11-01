@@ -16,7 +16,7 @@ Installation
 
 Grab a copy of the latest release and deploy the web application 'pepper.war' to
 your web server.  For example, with Tomcat, the pepper.war file can be copied
-to Tomcat's 'webapps' directory it will automatically be deployed for you.
+to Tomcat's 'webapps' directory and it will automatically be deployed for you.
 
 
 Database
@@ -24,9 +24,9 @@ Database
 
 By default the project connects to a MySQL database.  There's an example
 Hibernate configuration that expects a MySQL user called 'pepper' with
-password 'pepper' with full access to a database (also called 'pepper').
+password 'pepper' and with full access to a database also called 'pepper'.
 
-A sample SQL script for MySQL can also be found in the project's
+A sample SQL script for MySQL can be found in the project's
 src/main/resources directory.  For convenience, this script is also included
 below.  It sets up the database and inserts some sample data.  The sample data
 is from the public domain (source: Wikipedia).  Disclaimer: this sample data is
