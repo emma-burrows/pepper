@@ -5,6 +5,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
+ * An entity representing a row in the 'drugs' table of the database, i.e. this
+ * entity represents a drug.
  * @author Ross Laidlaw
  */
 @Entity
@@ -14,6 +16,8 @@ public class DrugEntity
   private String name;
   private String formula;
   private String weight;
+  private String atc;
+  private String unii;
   private String imageName;
 
   /**
@@ -61,6 +65,24 @@ public class DrugEntity
   }
 
   /**
+   * Gets the ATC code.
+   * @return the ATC code
+   */
+  public String getAtc()
+  {
+    return atc;
+  }
+
+  /**
+   * Gets the UNII identifier.
+   * @return the UNII identifier
+   */
+  public String getUnii()
+  {
+    return unii;
+  }
+
+  /**
    * Gets the imageName.
    * @return the imageName
    */
@@ -94,6 +116,24 @@ public class DrugEntity
   public void setWeight(String weight)
   {
     this.weight = weight;
+  }
+
+  /**
+   * Sets the ATC code.
+   * @param atc the ATC code to set
+   */
+  public void setAtc(String atc)
+  {
+    this.atc = atc;
+  }
+
+  /**
+   * Sets the UNII identifier.
+   * @param unii the UNII identifier to set
+   */
+  public void setUnii(String unii)
+  {
+    this.unii = unii;
   }
 
   /**
