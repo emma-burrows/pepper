@@ -16,6 +16,7 @@ public class DrugEntity
   private String name;
   private String formula;
   private String weight;
+  private String cas;
   private String atc;
   private String unii;
   private String imageName;
@@ -62,6 +63,15 @@ public class DrugEntity
   public String getWeight()
   {
     return weight;
+  }
+
+  /**
+   * Gets the CAS number.
+   * @return the CAS number
+   */
+  public String getCas()
+  {
+    return cas;
   }
 
   /**
@@ -116,6 +126,15 @@ public class DrugEntity
   public void setWeight(String weight)
   {
     this.weight = weight;
+  }
+
+  /**
+   * Sets the CAS number.
+   * @param cas the CAS number to set
+   */
+  public void setCas(String cas)
+  {
+    this.cas = cas;
   }
 
   /**

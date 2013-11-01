@@ -22,6 +22,8 @@
                 <dd class="formula">${drug.formula}</dd>
                 <dt>weight (g/mol)</dt>
                 <dd>${drug.weight}</dd>
+                <dt>CAS</dt>
+                <dd>${drug.cas}</dd>
                 <dt>ATC</dt>
                 <dd>${drug.atc}</dd>
                 <dt>UNII</dt>
