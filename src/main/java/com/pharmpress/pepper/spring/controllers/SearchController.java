@@ -51,7 +51,7 @@ public class SearchController
     {
       session.beginTransaction();
       Query query = session
-        .createQuery("from DrugEntity where name like :name");
+        .createQuery("from DrugEntity where name like :name order by name asc");
       query.setParameter("name", '%' + name + '%');
 
       List<DrugEntity> drugs = new ArrayList<DrugEntity>();
