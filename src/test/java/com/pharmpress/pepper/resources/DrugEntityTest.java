@@ -40,7 +40,7 @@ public class DrugEntityTest
       Query query = session
         .createQuery("from DrugEntity where name like :name");
       query.setParameter("name", '%' + name + '%');
-  
+
       List<DrugEntity> drugs = new ArrayList<DrugEntity>();
       for(Object object : query.list())
       {
