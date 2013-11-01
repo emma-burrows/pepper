@@ -32,7 +32,7 @@ below.  It sets up the database and inserts some sample data.  The sample data
 is from the public domain (source: Wikipedia).  Disclaimer: this sample data is
 for demonstration purposes only and should not be used as valid data.
 
-
+```
 drop database if exists pepper;
 create database if not exists pepper;
 use pepper;
@@ -77,7 +77,7 @@ insert into drugs (name, formula, weight, cas, atc, unii, imageName)
 insert into drugs (name, formula, weight, cas, atc, unii, imageName)
   values ("warfarin", "C19H16O4", 308.3, "81-81-2", "B01AA03", "5Q7ZVV76EI",
     "warfarin");
-
+```
 
 For each record in the drugs table, the 'imageName' field is used to store the
 name (without path or file extension) of a PNG image file that shows the
