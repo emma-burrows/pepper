@@ -44,11 +44,6 @@ public class DrugSearchTest {
   public void testSearchDrug() throws Exception 
   {
     String drugName = "aspirin";
-    String expectedXml =
-        "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"
-        + "<drug>"
-        + "<name>" + drugName + "</name>"
-        + "</drug>";
     
     this.mockMvc.perform(get("/search")
         .param("name", drugName)
