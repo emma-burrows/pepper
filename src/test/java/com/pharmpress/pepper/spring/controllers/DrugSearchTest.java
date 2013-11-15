@@ -18,7 +18,6 @@ import org.springframework.web.context.WebApplicationContext;
 /**
  * Tests for the drug search using the MVC servlet
  * @author Emma Burrows
- *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
@@ -30,6 +29,9 @@ public class DrugSearchTest {
 
   private MockMvc mockMvc;
 
+  /**
+   * Creates a mock web application context.
+   */
   @Before
   public void setup() 
   {
@@ -44,18 +46,10 @@ public class DrugSearchTest {
   public void testSearchDrug() throws Exception 
   {
     String drugName = "aspirin";
-    String expectedXml =
-        "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"
-        + "<drug>"
-        + "<name>" + drugName + "</name>"
-        + "</drug>";
-    
     this.mockMvc.perform(get("/search")
         .param("name", drugName)
           .accept(MediaType.APPLICATION_XML))
       .andExpect(status().isOk())
       .andExpect(view().name("search"));
-
   }
-
 }
