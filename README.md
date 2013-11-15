@@ -92,7 +92,7 @@ Development
 -----------
 
 You're welcome to fork or clone the project on GitHub.  The project uses
-Maven as its build tool.  To build it, simply run 'mvn clean install' from the
+Maven as its build tool.  To build it, run 'mvn clean install' from the
 top-level directory.  Any contributions are welcome, along with ideas and
 suggestions for improvement.  The project uses GitHub's issue tracker to
 keep track of progress.
