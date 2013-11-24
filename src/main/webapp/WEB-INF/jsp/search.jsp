@@ -30,7 +30,7 @@
                 <dd>${drug.unii}</dd>
                 <dt>structure</dt>
                 <dd>
-                  <img src="/pepper/images/${drug.imageName}.png"
+                  <img src="images/${drug.imageName}.png"
                     width="300">
                 </dd>
               </dl>
