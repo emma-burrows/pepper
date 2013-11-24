@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:choose>
   <c:when test="${not empty drugs}">
-    <c:set var="count" value="1" scope="page" />
+    <c:set var="count" value="1" scope="page"/>
 
     <!-- Drug result accordion -->
     <div class="panel-group" id="accordion">
@@ -37,7 +37,7 @@
             </div>
           </div>
         </div>
-        <c:set var="count" value="${count + 1}" scope="page" />
+        <c:set var="count" value="${count + 1}" scope="page"/>
       </c:forEach>
 
     </div>
