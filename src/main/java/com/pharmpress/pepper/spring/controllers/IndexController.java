@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.pharmpress.pepper.configuration.HibernateConfiguration;
 import com.pharmpress.pepper.resources.DrugEntity;
 
 /**
@@ -33,18 +34,17 @@ public class IndexController
   @RequestMapping(method = RequestMethod.GET)
   public String index(Model model)
   {
-    Configuration configuration = new Configuration();
-    configuration.configure();
+    Configuration configuration = HibernateConfiguration.create();
     ServiceRegistry serviceRegistry = new ServiceRegistryBuilder()
       .applySettings(configuration.getProperties()).buildServiceRegistry();
     SessionFactory sessionFactory = configuration
       .buildSessionFactory(serviceRegistry);
-
     Session session = sessionFactory.openSession();
+
     try
     {
       session.beginTransaction();
-      
+
       // Return count of all the rows in the drugs table
       Criteria criteria = session.createCriteria(DrugEntity.class);
       criteria.setProjection(Projections.rowCount());
@@ -57,8 +57,7 @@ public class IndexController
     }
     catch (RuntimeException e)
     {
-      logger.error("Error retrieving data count: ",
-        e);
+      logger.error("Error retrieving data count: ", e);
       session.getTransaction().rollback();
     }
     finally

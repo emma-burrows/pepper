@@ -11,6 +11,8 @@ import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 import org.junit.Test;
 
+import com.pharmpress.pepper.configuration.HibernateConfiguration;
+
 /**
  * @author Ross Laidlaw
  */
@@ -23,8 +25,7 @@ public class DrugEntityTest
   @Test
   public void testDatabaseConnection()
   {
-    Configuration configuration = new Configuration();
-    configuration.configure();
+    Configuration configuration = HibernateConfiguration.create();
     ServiceRegistry serviceRegistry = new ServiceRegistryBuilder()
       .applySettings(configuration.getProperties()).buildServiceRegistry();
     SessionFactory sessionFactory = configuration
