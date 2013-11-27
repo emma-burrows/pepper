@@ -16,15 +16,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <header>
+    <div id="wrap">
       <tiles:insertAttribute name="header"/>
-    </header>
-    <div id="content" class="container">
-      <tiles:insertAttribute name="body"/>
+      <div id="content" class="container">
+        <tiles:insertAttribute name="body"/>
+      </div>
     </div>
-    <footer>
-      <tiles:insertAttribute name="footer"/>
-    </footer>
+    <tiles:insertAttribute name="footer"/>
     <script src="javascript/jquery-2.0.3.min.js"></script>
     <script src="javascript/bootstrap-3.0.0/js/bootstrap.min.js"></script>
     <script src="javascript/formula.js"></script>
