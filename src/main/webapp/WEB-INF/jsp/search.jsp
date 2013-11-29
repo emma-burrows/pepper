@@ -1,7 +1,7 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:choose>
   <c:when test="${not empty drugs}">
-    <c:set var="count" value="1" scope="page" />
+    <c:set var="count" value="1" scope="page"/>
 
     <!-- Drug result accordion -->
     <div class="panel-group" id="accordion">
@@ -30,14 +30,14 @@
                 <dd>${drug.unii}</dd>
                 <dt>structure</dt>
                 <dd>
-                  <img src="/pepper/images/${drug.imageName}.png"
+                  <img src="images/${drug.imageName}.png"
                     width="300">
                 </dd>
               </dl>
             </div>
           </div>
         </div>
-        <c:set var="count" value="${count + 1}" scope="page" />
+        <c:set var="count" value="${count + 1}" scope="page"/>
       </c:forEach>
 
     </div>

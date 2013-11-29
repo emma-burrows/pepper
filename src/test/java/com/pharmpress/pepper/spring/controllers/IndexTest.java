@@ -32,6 +32,9 @@ public class IndexTest {
   
   private MockMvc mockMvc;
 
+  /**
+   * Creates a mock web application context.
+   */
   @Before
   public void setup() 
   {
@@ -51,5 +54,4 @@ public class IndexTest {
       .andExpect(view().name("index"))
       .andExpect(model().attributeExists("drugcount"));
   }
-
 }

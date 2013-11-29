@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.pharmpress.pepper.configuration.HibernateConfiguration;
 import com.pharmpress.pepper.resources.DrugEntity;
 
 /**
@@ -37,8 +38,7 @@ public class SearchController
   public String getDrug(@RequestParam(value="name", required=false) String name,
     Model model)
   {
-    Configuration configuration = new Configuration();
-    configuration.configure();
+    Configuration configuration = HibernateConfiguration.create();
     ServiceRegistry serviceRegistry = new ServiceRegistryBuilder()
       .applySettings(configuration.getProperties()).buildServiceRegistry();
     SessionFactory sessionFactory = configuration
