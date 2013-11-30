@@ -1,4 +1,4 @@
-package com.pharmpress.pepper.resources;
+package com.pepper.resources;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,8 @@ import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 import org.junit.Test;
 
-import com.pharmpress.pepper.configuration.HibernateConfiguration;
+import com.pepper.configuration.HibernateConfiguration;
+import com.pepper.resources.DrugEntity;
 
 /**
  * @author Ross Laidlaw

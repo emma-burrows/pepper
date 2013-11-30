@@ -1,4 +1,4 @@
-package com.pharmpress.pepper.spring.controllers;
+package com.pepper.spring.controllers;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.pharmpress.pepper.configuration.HibernateConfiguration;
+import com.pepper.configuration.HibernateConfiguration;
 
 /**
  * Controller that provides a RESTful service.

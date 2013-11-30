@@ -1,7 +1,9 @@
-package com.pharmpress.pepper.spring.controllers;
+package com.pepper.spring.controllers;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -16,14 +18,14 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 /**
- * Tests for the drug search using the MVC servlet
+ * Tests for the index page using the MVC servlet
  * @author Emma Burrows
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration("test-servlet-context.xml")
-public class DrugSearchTest {
-
+public class IndexTest
+{
   @Autowired
   private WebApplicationContext wac;
 
@@ -35,21 +37,20 @@ public class DrugSearchTest {
   @Before
   public void setup() 
   {
-    this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
+    mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
   }
 
   /**
-   * Tests that drug search returns the correct view
+   * Tests that index returns the correct view and contains a drugcount attribute
    * @throws Exception
    */
   @Test
-  public void testSearchDrug() throws Exception 
+  public void testIndex() throws Exception
   {
-    String drugName = "aspirin";
-    this.mockMvc.perform(get("/search")
-        .param("name", drugName)
-          .accept(MediaType.APPLICATION_XML))
+    mockMvc.perform(get("/")
+      .accept(MediaType.TEXT_HTML))
       .andExpect(status().isOk())
-      .andExpect(view().name("search"));
+      .andExpect(view().name("index"))
+      .andExpect(model().attributeExists("drugcount"));
   }
 }

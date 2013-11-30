@@ -1,4 +1,4 @@
-package com.pharmpress.pepper.spring.controllers;
+package com.pepper.spring.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.pharmpress.pepper.configuration.HibernateConfiguration;
-import com.pharmpress.pepper.resources.DrugEntity;
+import com.pepper.configuration.HibernateConfiguration;
+import com.pepper.resources.DrugEntity;
 
 /**
  * Controller that handles database search requests from the user interface.
