@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <c:choose>
   <c:when test="${not empty drugs}">
     <c:set var="count" value="1" scope="page"/>
@@ -31,7 +32,7 @@
                 <dt>structure</dt>
                 <dd>
                   <img src="images/${drug.imageName}.png"
-                    width="300">
+                    class="img-responsive">
                 </dd>
               </dl>
             </div>

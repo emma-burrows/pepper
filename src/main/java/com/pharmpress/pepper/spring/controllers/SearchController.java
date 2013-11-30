@@ -20,6 +20,7 @@ import com.pharmpress.pepper.configuration.HibernateConfiguration;
 import com.pharmpress.pepper.resources.DrugEntity;
 
 /**
+ * Controller that handles database search requests from the user interface.
  * @author Ross Laidlaw
  */
 @Controller
@@ -44,30 +45,31 @@ public class SearchController
     SessionFactory sessionFactory = configuration
       .buildSessionFactory(serviceRegistry);
 
-    // This is a read-only transaction, so perhaps the try...catch isn't
-    // needed here...
     Session session = sessionFactory.openSession();
     try
     {
       session.beginTransaction();
+
+      // Perform the search query.
       Query query = session
         .createQuery("from DrugEntity where name like :name order by name asc");
       query.setParameter("name", '%' + name + '%');
 
+      // Generate a list of drugs and add this to the model.
       List<DrugEntity> drugs = new ArrayList<DrugEntity>();
       for(Object object : query.list())
       {
         drugs.add((DrugEntity) object);
       }
       model.addAttribute("drugs", drugs);
-      model.addAttribute("title", "Search results");
 
+      // Commit the transaction.
       session.getTransaction().commit();
     }
-    catch (RuntimeException e)
+    catch(RuntimeException e)
     {
-      logger.error("Error retrieving data using search query '" + name + "': ",
-        e);
+      logger.error("Error retrieving search data for query parameter "
+        + "name=" + name, e);
       session.getTransaction().rollback();
     }
     finally
