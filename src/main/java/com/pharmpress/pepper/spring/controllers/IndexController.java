@@ -51,7 +51,7 @@ public class IndexController
       long count = (Long)criteria.uniqueResult();
 
       model.addAttribute("drugcount", count);
-      model.addAttribute("title", "Drug database");
+      model.addAttribute("title", "Drug Database");
 
       session.getTransaction().commit();
     }
