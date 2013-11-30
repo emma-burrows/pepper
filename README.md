@@ -30,9 +30,11 @@ for your database:
 
 These can be supplied to Maven via the command line, for example:
 
+```
 mvn clean install -DargLine="-DDATABASE_URL_PEPPER=mysql://localhost:3306/pepper
--DDATABASE_USERNAME_PEPPER=pepper
--DDATABASE_PASSWORD_PEPPER=pepper"
+  -DDATABASE_USERNAME_PEPPER=pepper
+  -DDATABASE_PASSWORD_PEPPER=pepper"
+```
 
 After building the application, the WAR file in the target directory can be
 deployed to a web server, for example Apache Tomcat.  Please note, you'll also
@@ -41,9 +43,11 @@ settings.  For example, with Apache Tomcat you can add these to your catalina.sh
 (or catalina.bat) or setenv.sh scripts.  The example shown below is for a
 setenv.sh script in a UNIX-based environment:
 
+```
 export JAVA_OPTS="-DDATABASE_URL_PEPPER=mysql://localhost:3306/pepper
   -DDATABASE_USERNAME_PEPPER=pepper -DDATABASE_PASSWORD_PEPPER=pepper
   -Xms1024m -Xmx1024m -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256m"
+```
 
 In the above setting for JAVA_OPTS, the 'CMSClassUnloadingEnabled' option
 has also been set.  This is useful for web applications that use Hibernate to
