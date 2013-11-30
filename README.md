@@ -5,32 +5,66 @@ Pepper
 Introduction
 ------------
 
-Pepper is a web application that connects to a drug database.  It uses the
-following technologies: Java EE, JAXB, Maven, Spring, Hibernate.  It is fully
+Pepper is a web application that connects to a drug database.  It uses
+technologies such as Java EE, JAXB, Maven, Spring and Hibernate.  It's fully
 compatible with Jenkins for continuous integration and the source code is
-hosted on GitHub.
+hosted on GitHub.  There's a continuous deployment server for Pepper hosted on
+CloudBees.  This responds to GitHub hooks to trigger Jenkins builds after every
+commit to the master branch.  After each successful build, the web application
+is redeployed to http://pepper.rlaidlaw.cloudbees.net.
 
 
 Installation
 ------------
 
-Grab a copy of the latest release and deploy the web application 'pepper.war' to
-your web server.  For example, with Tomcat, the pepper.war file can be copied
-to Tomcat's 'webapps' directory and it will automatically be deployed for you.
+Download the source code for the master branch or for a tagged release.
+
+The project uses Maven as its build tool.  To build the web application, you'll
+need to run 'mvn clean install ... ' from the project's top-level directory and
+also supply the following system properties for the URL, username and password
+for your database:
+
+* DATABASE_URL_PEPPER
+* DATABASE_USERNAME_PEPPER
+* DATABASE_PASSWORD_PEPPER
+
+These can be supplied to Maven via the command line, for example:
+
+```
+mvn clean install -DargLine="-DDATABASE_URL_PEPPER=mysql://localhost:3306/pepper
+  -DDATABASE_USERNAME_PEPPER=pepper
+  -DDATABASE_PASSWORD_PEPPER=pepper"
+```
+
+After building the application, the WAR file in the target directory can be
+deployed to a web server, for example Apache Tomcat.  Please note, you'll also
+need to supply the same system properties to your web server as 'JAVA_OPTS'
+settings.  For example, with Apache Tomcat you can add these to your catalina.sh
+(or catalina.bat) or setenv.sh scripts.  The example shown below is for a
+setenv.sh script in a UNIX-based environment:
+
+```
+export JAVA_OPTS="-DDATABASE_URL_PEPPER=mysql://localhost:3306/pepper
+  -DDATABASE_USERNAME_PEPPER=pepper -DDATABASE_PASSWORD_PEPPER=pepper
+  -Xms1024m -Xmx1024m -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256m"
+```
+
+In the above setting for JAVA_OPTS, the 'CMSClassUnloadingEnabled' option
+has also been set.  This is useful for web applications that use Hibernate to
+prevent OutOfMemoryError:PermGen errors being thrown.
 
 
 Database
 --------
 
-By default the project connects to a MySQL database.  There's an example
-Hibernate configuration that expects a MySQL user called 'pepper' with
-password 'pepper' and with full access to a database also called 'pepper'.
+By default the project connects to a MySQL database using the settings supplied
+via system properties.
 
-A sample SQL script for MySQL can be found in the project's
-src/main/resources directory.  For convenience, this script is also included
-below.  It sets up the database and inserts some sample data.  The sample data
-is from the public domain (source: Wikipedia).  Disclaimer: this sample data is
-for demonstration purposes only and should not be used as valid data.
+A sample SQL script for MySQL can be found in the project's src/main/resources
+directory.  For convenience, this script is also included below.  It sets up the
+database and inserts some sample data.  The sample data is from the public
+domain (source: Wikipedia).  Disclaimer: this sample data is for demonstration
+purposes only and should not be used as valid data.
 
 ```
 drop database if exists pepper;
@@ -91,8 +125,7 @@ data.
 Development
 -----------
 
-You're welcome to fork or clone the project on GitHub.  The project uses
-Maven as its build tool.  To build it, run 'mvn clean install' from the
-top-level directory.  Any contributions are welcome, along with ideas and
-suggestions for improvement.  The project uses GitHub's issue tracker to
-keep track of progress.
+You're welcome to fork or clone the project on GitHub.  Any contributions are
+welcome, along with ideas and suggestions for improvement.  The project uses
+GitHub's issue tracker to keep track of progress on current milestones.  Ideas
+and suggestions are kept on the wiki pages rather than the issue list.

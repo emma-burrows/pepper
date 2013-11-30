@@ -11,7 +11,7 @@
     http://www.springframework.org/schema/mvc/spring-mvc.xsd">
   
   <context:component-scan
-    base-package="com.pharmpress.pepper.spring.controllers"/>
+    base-package="com.pepper.spring.controllers"/>
 
   <bean
     class="org.springframework.web.servlet.view.InternalResourceViewResolver">

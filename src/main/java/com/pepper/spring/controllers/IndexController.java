@@ -1,4 +1,4 @@
-package com.pharmpress.pepper.spring.controllers;
+package com.pepper.spring.controllers;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
@@ -13,8 +13,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.pharmpress.pepper.configuration.HibernateConfiguration;
-import com.pharmpress.pepper.resources.DrugEntity;
+import com.pepper.configuration.HibernateConfiguration;
+import com.pepper.resources.DrugEntity;
 
 /**
  * Controller for the welcome page with database record count.
@@ -51,7 +51,7 @@ public class IndexController
       long count = (Long)criteria.uniqueResult();
 
       model.addAttribute("drugcount", count);
-      model.addAttribute("title", "Drug database");
+      model.addAttribute("title", "Drug Database");
 
       session.getTransaction().commit();
     }

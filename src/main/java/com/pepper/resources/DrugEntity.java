@@ -1,4 +1,4 @@
-package com.pharmpress.pepper.resources;
+package com.pepper.resources;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
