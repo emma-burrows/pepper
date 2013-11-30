@@ -3,4 +3,4 @@
  * project.
  * @author Ross Laidlaw
  */
-package com.pharmpress.pepper.configuration;
+package com.pepper.configuration;

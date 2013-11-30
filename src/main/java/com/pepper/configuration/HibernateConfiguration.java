@@ -1,4 +1,4 @@
-package com.pharmpress.pepper.configuration;
+package com.pepper.configuration;
 
 import org.hibernate.cfg.Configuration;
 
