@@ -1,4 +1,4 @@
-package com.pepper.spring.controllers;
+package com.pepper.controllers;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
@@ -13,8 +13,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.pepper.configuration.HibernateConfiguration;
-import com.pepper.resources.DrugEntity;
+import com.pepper.configurations.HibernateConfiguration;
+import com.pepper.domain.DrugEntity;
 
 /**
  * Controller for the welcome page with database record count.

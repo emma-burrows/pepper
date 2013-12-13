@@ -1,4 +1,4 @@
-package com.pepper.spring.controllers;
+package com.pepper.controllers;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.pepper.configuration.HibernateConfiguration;
+import com.pepper.configurations.HibernateConfiguration;
 
 /**
  * Controller that provides a RESTful service.

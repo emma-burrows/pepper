@@ -14,7 +14,7 @@
       com.mysql.jdbc.Driver
     </property>
 
-    <mapping class="com.pepper.resources.DrugEntity"/>
+    <mapping class="com.pepper.domain.DrugEntity"/>
 
   </session-factory>
 

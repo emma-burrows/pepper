@@ -11,8 +11,8 @@ import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 import org.junit.Test;
 
-import com.pepper.configuration.HibernateConfiguration;
-import com.pepper.resources.DrugEntity;
+import com.pepper.configurations.HibernateConfiguration;
+import com.pepper.domain.DrugEntity;
 
 /**
  * @author Ross Laidlaw
