@@ -1,4 +1,4 @@
-package com.pepper.configuration;
+package com.pepper.configurations;
 
 import org.hibernate.cfg.Configuration;
 

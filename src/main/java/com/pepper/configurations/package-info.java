@@ -3,4 +3,4 @@
  * project.
  * @author Ross Laidlaw
  */
-package com.pepper.configuration;
+package com.pepper.configurations;

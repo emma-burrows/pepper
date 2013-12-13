@@ -14,6 +14,8 @@ import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.Test;
 import org.xml.sax.SAXException;
 
+import com.pepper.domain.DrugResource;
+
 /**
  * Implements tests for the {@link DrugResource} class.
  * @author Ross Laidlaw

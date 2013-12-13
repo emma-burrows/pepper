@@ -1,4 +1,4 @@
-package com.pepper.resources;
+package com.pepper.domain;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
