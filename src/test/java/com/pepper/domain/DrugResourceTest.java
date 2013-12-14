@@ -1,4 +1,4 @@
-package com.pepper.resources;
+package com.pepper.domain;
 
 import static org.junit.Assert.assertTrue;
 

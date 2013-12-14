@@ -1,12 +1,12 @@
-package com.pepper.resources;
+package com.pepper.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * An entity representing a row in the 'drugs' table of the database, i.e. this
- * entity represents a drug.
+ * An entity for a row in the 'drugs' table of the database, i.e. this entity
+ * represents a drug.
  * @author Ross Laidlaw
  */
 @Entity
