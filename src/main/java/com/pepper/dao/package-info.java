@@ -1,5 +1,5 @@
 /**
  * Contains classes for data access.
- * @author rlaidlaw
+ * @author Ross Laidlaw
  */
 package com.pepper.dao;

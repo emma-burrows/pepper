@@ -1,5 +1,5 @@
 /**
  * Contains classes for data services.
- * @author rlaidlaw
+ * @author Ross Laidlaw
  */
 package com.pepper.services;

@@ -1,20 +1,12 @@
 package com.pepper.controllers;
 
-import org.apache.log4j.Logger;
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.criterion.Projections;
-import org.hibernate.service.ServiceRegistry;
-import org.hibernate.service.ServiceRegistryBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.pepper.configurations.HibernateConfiguration;
-import com.pepper.domain.DrugEntity;
+import com.pepper.services.DrugService;
 
 /**
  * Controller for the welcome page with database record count.
@@ -24,7 +16,8 @@ import com.pepper.domain.DrugEntity;
 @RequestMapping("/")
 public class IndexController
 {
-  private static final Logger logger = Logger.getLogger("IndexController");
+  @Autowired
+  private DrugService drugService;
 
   /**
    * Returns a welcome screen.
@@ -34,38 +27,8 @@ public class IndexController
   @RequestMapping(method = RequestMethod.GET)
   public String index(Model model)
   {
-    Configuration configuration = HibernateConfiguration.create();
-    ServiceRegistry serviceRegistry = new ServiceRegistryBuilder()
-      .applySettings(configuration.getProperties()).buildServiceRegistry();
-    SessionFactory sessionFactory = configuration
-      .buildSessionFactory(serviceRegistry);
-    Session session = sessionFactory.openSession();
-
-    try
-    {
-      session.beginTransaction();
-
-      // Return count of all the rows in the drugs table
-      Criteria criteria = session.createCriteria(DrugEntity.class);
-      criteria.setProjection(Projections.rowCount());
-      long count = (Long)criteria.uniqueResult();
-
-      model.addAttribute("drugcount", count);
-      model.addAttribute("title", "Drug Database");
-
-      session.getTransaction().commit();
-    }
-    catch (RuntimeException e)
-    {
-      logger.error("Error retrieving data count: ", e);
-      session.getTransaction().rollback();
-    }
-    finally
-    {
-      session.close();
-      sessionFactory.close();
-    }
-
+    model.addAttribute("drugcount", drugService.getCount());
+    model.addAttribute("title", "Drug Database");
     return "index";
   }
 }

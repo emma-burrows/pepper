@@ -5,7 +5,7 @@ import org.hibernate.cfg.Configuration;
 /**
  * Creates Hibernate Configurations programmatically, overriding settings in the
  * Hibernate XML configuration.
- * @author rlaidlaw
+ * @author Ross Laidlaw
  */
 public class HibernateConfiguration
 {

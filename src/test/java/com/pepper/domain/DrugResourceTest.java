@@ -1,4 +1,4 @@
-package com.pepper.resources;
+package com.pepper.domain;
 
 import static org.junit.Assert.assertTrue;
 
@@ -13,8 +13,6 @@ import org.custommonkey.xmlunit.Diff;
 import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.Test;
 import org.xml.sax.SAXException;
-
-import com.pepper.domain.DrugResource;
 
 /**
  * Implements tests for the {@link DrugResource} class.
