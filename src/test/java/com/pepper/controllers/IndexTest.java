@@ -26,19 +26,19 @@ import org.springframework.web.context.WebApplicationContext;
 @ContextConfiguration("test-servlet-context.xml")
 public class IndexTest
 {
-//  @Autowired
-//  private WebApplicationContext wac;
-//
-//  private MockMvc mockMvc;
-//
-//  /**
-//   * Creates a mock web application context.
-//   */
-//  @Before
-//  public void setup() 
-//  {
-//    mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
-//  }
+  @Autowired
+  private WebApplicationContext wac;
+
+  private MockMvc mockMvc;
+
+  /**
+   * Creates a mock web application context.
+   */
+  @Before
+  public void setup() 
+  {
+    mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
+  }
 
   /**
    * Tests that index returns the correct view and contains a drugcount attribute
@@ -47,10 +47,10 @@ public class IndexTest
   @Test
   public void testIndex() throws Exception
   {
-//    mockMvc.perform(get("/")
-//      .accept(MediaType.TEXT_HTML))
-//      .andExpect(status().isOk())
-//      .andExpect(view().name("index"))
-//      .andExpect(model().attributeExists("drugcount"));
+    mockMvc.perform(get("/")
+      .accept(MediaType.TEXT_HTML))
+      .andExpect(status().isOk())
+      .andExpect(view().name("index"))
+      .andExpect(model().attributeExists("drugcount"));
   }
 }
