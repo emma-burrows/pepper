@@ -1,5 +1,5 @@
 /**
  * Contains controllers for the Spring MVC web service.
- * @author prototype
+ * @author Ross Laidlaw
  */
 package com.pepper.controllers;

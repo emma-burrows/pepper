@@ -16,13 +16,13 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 /**
- * Tests for the drug search using the MVC servlet
+ * Tests the search view using the MVC servlet.
  * @author Emma Burrows
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration("test-servlet-context.xml")
-public class DrugSearchTest
+@ContextConfiguration(locations = {"classpath:**/test-servlet-context.xml"})
+public class SearchViewTest
 {
   @Autowired
   private WebApplicationContext wac;
@@ -39,7 +39,7 @@ public class DrugSearchTest
   }
 
   /**
-   * Tests that drug search returns the correct view
+   * Tests that the search URL returns the correct view.
    * @throws Exception
    */
   @Test
