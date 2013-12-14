@@ -23,8 +23,8 @@ import org.springframework.web.context.WebApplicationContext;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration("test-servlet-context.xml")
-public class IndexTest
+@ContextConfiguration(locations = {"classpath:**/test-servlet-context.xml"})
+public class IndexViewTest
 {
   @Autowired
   private WebApplicationContext wac;
@@ -41,7 +41,8 @@ public class IndexTest
   }
 
   /**
-   * Tests that index returns the correct view and contains a drugcount attribute
+   * Tests that the root URL returns the correct view and that the view contains
+   * a drugcount attribute.
    * @throws Exception
    */
   @Test
