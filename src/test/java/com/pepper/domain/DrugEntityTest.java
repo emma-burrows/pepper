@@ -8,12 +8,9 @@ import org.junit.Test;
 public class DrugEntityTest
 {
   /**
-   * This test fires a query at the database and prints out the returned
-   * results.
    */
   @Test
-  public void testDatabaseConnection()
+  public void test()
   {
-    
   }
 }

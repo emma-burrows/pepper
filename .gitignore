@@ -6,13 +6,17 @@
 *.war
 *.ear
 
-# Maven outputs
+# Maven
 target/
 
 # Eclipse
 .classpath
 .project
 .settings/
+
+# IntelliJ
+.idea/
+*.iml
 
 # Mac
 .DS_Store
