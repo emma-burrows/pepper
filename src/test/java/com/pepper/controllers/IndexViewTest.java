@@ -23,7 +23,7 @@ import org.springframework.web.context.WebApplicationContext;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration(locations = {"classpath:**/test-servlet-context.xml"})
+@ContextConfiguration(locations = {"classpath:test-servlet-cfg.xml"})
 public class IndexViewTest
 {
   @Autowired
