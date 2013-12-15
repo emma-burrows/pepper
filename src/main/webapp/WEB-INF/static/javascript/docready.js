@@ -23,7 +23,6 @@ $(document).ready(function() {
           this.value = ui.item.value;
           $("#search").focus();
         }
-        return false;
       }
 
     });
