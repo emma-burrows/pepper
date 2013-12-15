@@ -1,13 +1,14 @@
 package com.pepper.controllers;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.pepper.services.DrugService;
 
 /**
@@ -31,22 +32,28 @@ public class RestController
   @ResponseBody
   public String getAutocomplete()
   {
-    JSONArray jsonArray = new JSONArray();
+    // A Gson object to manage the creation of the JSON data.
+    Gson gson = new Gson();
+
+    // The main JSON array for the autocomplete data.
+    JsonArray jsonArray = new JsonArray();
+
     for(String name : drugService.getAllNamesAsc())
     {
       // Add the value data to the JSON object.
-      JSONObject jsonObj = new JSONObject();
-      jsonObj.put("value", name);
+      JsonObject jsonObj = new JsonObject();
+      jsonObj.addProperty("value", name);
 
       // Add the tokens data to the JSON object.
-      JSONArray tokens = new JSONArray();
-      tokens.add(name);
-      jsonObj.put("tokens", tokens);
+      JsonArray tokens = new JsonArray();
+      tokens.add(gson.toJsonTree(name));
+      jsonObj.add("tokens", tokens);
 
       // Add the JSON object to the JSON array.
       jsonArray.add(jsonObj);
     }
 
-    return jsonArray.toJSONString();
+    // Send the JSON data as a String in the response.
+    return gson.toJson(jsonArray);
   }
 }
