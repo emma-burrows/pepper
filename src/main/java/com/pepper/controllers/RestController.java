@@ -42,12 +42,7 @@ public class RestController
     {
       // Add the value data to the JSON object.
       JsonObject jsonObj = new JsonObject();
-      jsonObj.addProperty("value", name);
-
-      // Add the tokens data to the JSON object.
-      JsonArray tokens = new JsonArray();
-      tokens.add(gson.toJsonTree(name));
-      jsonObj.add("tokens", tokens);
+      jsonObj.addProperty("label", name);
 
       // Add the JSON object to the JSON array.
       jsonArray.add(jsonObj);
