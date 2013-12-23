@@ -22,22 +22,6 @@ public class DrugEntity
   private String imageName;
 
   /**
-   * Default constructor used by Hibernate.
-   */
-  public DrugEntity()
-  {
-  }
-
-  /**
-   * Constructor that sets the name of the drug.
-   * @param name the name of the drug
-   */
-  public DrugEntity(String name)
-  {
-    this.name = name;
-  }
-
-  /**
    * Gets the name.
    * @return the name
    */
@@ -57,8 +41,8 @@ public class DrugEntity
   }
 
   /**
-   * Gets the weight.
-   * @return the weight
+   * Gets the molecular weight.
+   * @return the molecular weight
    */
   public String getWeight()
   {
@@ -93,8 +77,8 @@ public class DrugEntity
   }
 
   /**
-   * Gets the imageName.
-   * @return the imageName
+   * Gets the image name.
+   * @return the image name
    */
   public String getImageName()
   {
@@ -120,8 +104,8 @@ public class DrugEntity
   }
 
   /**
-   * Sets the weight.
-   * @param weight the weight to set
+   * Sets the molecular weight.
+   * @param weight the molecular weight to set
    */
   public void setWeight(String weight)
   {
@@ -156,8 +140,8 @@ public class DrugEntity
   }
 
   /**
-   * Sets the imageName.
-   * @param imageName the imageName to set
+   * Sets the image name.
+   * @param imageName the image name to set
    */
   public void setImageName(String imageName)
   {

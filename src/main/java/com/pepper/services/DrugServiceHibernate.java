@@ -20,6 +20,13 @@ public class DrugServiceHibernate implements DrugService
   private DrugDao drugDao;
 
   @Override
+  @Transactional
+  public void save(DrugEntity drugEntity)
+  {
+    drugDao.save(drugEntity);
+  }
+
+  @Override
   @Transactional(readOnly = true)
   public List<DrugEntity> getAllByName(String name)
   {
@@ -38,5 +45,12 @@ public class DrugServiceHibernate implements DrugService
   public long getCount()
   {
     return drugDao.getCount();
+  }
+
+  @Override
+  @Transactional
+  public void delete(DrugEntity drugEntity)
+  {
+    drugDao.delete(drugEntity);
   }
 }

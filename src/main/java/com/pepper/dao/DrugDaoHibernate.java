@@ -26,12 +26,23 @@ public class DrugDaoHibernate implements DrugDao
 
   /**
    * Sets the session factory.
-   * @param sessionFactory
+   * @param sessionFactory the session factory to set
    */
   public void setSessionFactory(SessionFactory sessionFactory)
   {
     this.sessionFactory = sessionFactory;
   }
+
+
+
+  @Override
+  @Transactional
+  public void save(DrugEntity drugEntity)
+  {
+    sessionFactory.getCurrentSession().saveOrUpdate(drugEntity);
+  }
+
+
 
   @Override
   @Transactional(readOnly = true)
@@ -78,5 +89,14 @@ public class DrugDaoHibernate implements DrugDao
     Criteria criteria = session.createCriteria(DrugEntity.class);
     criteria.setProjection(Projections.rowCount());
     return (Long) criteria.uniqueResult();
+  }
+
+
+
+  @Override
+  @Transactional
+  public void delete(DrugEntity drugEntity)
+  {
+    sessionFactory.getCurrentSession().delete(drugEntity);
   }
 }
