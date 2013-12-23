@@ -28,14 +28,19 @@ public class RestControllerTest
 
   private MockMvc mockMvc;
 
-
+  /**
+   * Creates a mock web application context.
+   */
   @Before
   public void setUp()
   {
     mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
   }
 
-
+  /**
+   * Tests that the /rest/autocomplete URL returns JSON content.
+   * @throws Exception
+   */
   @Test
   public void testGetAutocomplete() throws Exception
   {
