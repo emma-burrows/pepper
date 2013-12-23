@@ -15,7 +15,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Tests the DrugDaoHibernate class.
+ * Tests the {@link DrugDaoHibernate} class.
  * @author Ross Laidlaw
  */
 @RunWith(SpringJUnit4ClassRunner.class)

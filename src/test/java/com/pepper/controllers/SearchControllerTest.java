@@ -16,13 +16,13 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 /**
- * Tests the search view using the MVC servlet.
+ * Tests the {@link SearchController} class.
  * @author Emma Burrows
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration(locations = {"classpath:test-servlet-cfg.xml"})
-public class SearchViewTest
+public class SearchControllerTest
 {
   @Autowired
   private WebApplicationContext wac;
@@ -35,7 +35,7 @@ public class SearchViewTest
   @Before
   public void setup()
   {
-    this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
+    mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
   }
 
   /**
@@ -45,9 +45,8 @@ public class SearchViewTest
   @Test
   public void testSearchDrug() throws Exception
   {
-    String drugName = "aspirin";
-    this.mockMvc.perform(get("/search")
-        .param("name", drugName)
+    mockMvc.perform(get("/search")
+        .param("name", "aspirin")
           .accept(MediaType.APPLICATION_XML))
       .andExpect(status().isOk())
       .andExpect(view().name("search"));

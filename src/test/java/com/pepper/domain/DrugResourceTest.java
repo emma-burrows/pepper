@@ -15,7 +15,7 @@ import org.junit.Test;
 import org.xml.sax.SAXException;
 
 /**
- * Implements tests for the {@link DrugResource} class.
+ * Tests the {@link DrugResource} class.
  * @author Ross Laidlaw
  */
 public class DrugResourceTest

@@ -18,13 +18,13 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 /**
- * Tests for the index page using the MVC servlet
+ * Tests the IndexController class.
  * @author Emma Burrows
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration(locations = {"classpath:test-servlet-cfg.xml"})
-public class IndexViewTest
+public class IndexControllerTest
 {
   @Autowired
   private WebApplicationContext wac;
@@ -35,9 +35,9 @@ public class IndexViewTest
    * Creates a mock web application context.
    */
   @Before
-  public void setup() 
+  public void setup()
   {
-    mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
+    mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
   }
 
   /**
