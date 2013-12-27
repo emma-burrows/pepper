@@ -19,29 +19,22 @@ Installation
 
 Download the source code for the master branch or for a tagged release.
 
-The project uses Maven as its build tool.  To build the web application, you'll
-need to run 'mvn clean install ... ' from the project's top-level directory and
-also supply the following system properties for the URL, username and password
-for your database:
+The project uses Maven as its build tool.  To build the web application, run
+'mvn clean install' from the project's top-level directory.
+
+After building the application, the WAR file in the target directory can be
+deployed to a web server, for example Apache Tomcat.  Please note, when running
+on a web server you'll need to supply the following system properties for the
+URL, username and password for your database:
 
 * DATABASE_URL_PEPPER
 * DATABASE_USERNAME_PEPPER
 * DATABASE_PASSWORD_PEPPER
 
-These can be supplied to Maven via the command line, for example:
-
-```
-mvn clean install -DargLine="-DDATABASE_URL_PEPPER=mysql://localhost:3306/pepper
-  -DDATABASE_USERNAME_PEPPER=pepper
-  -DDATABASE_PASSWORD_PEPPER=pepper"
-```
-
-After building the application, the WAR file in the target directory can be
-deployed to a web server, for example Apache Tomcat.  Please note, you'll also
-need to supply the same system properties to your web server as 'JAVA_OPTS'
-settings.  For example, with Apache Tomcat you can add these to your catalina.sh
-(or catalina.bat) or setenv.sh scripts.  The example shown below is for a
-setenv.sh script in a UNIX-based environment:
+These can be supplied to your web server as 'JAVA_OPTS' settings.  For example,
+with Apache Tomcat you can add these to your catalina.sh (or catalina.bat) or
+setenv.sh scripts.  The example shown below is for a setenv.sh script in a
+UNIX-based environment:
 
 ```
 export JAVA_OPTS="-DDATABASE_URL_PEPPER=mysql://localhost:3306/pepper
@@ -57,8 +50,8 @@ prevent OutOfMemoryError:PermGen errors being thrown.
 Database
 --------
 
-By default the project connects to a MySQL database using the settings supplied
-via system properties.
+The project uses an example database properties file that connects to a MySQL
+database (in addition to the settings supplied via system properties).
 
 A sample SQL script for MySQL can be found in the project's src/main/resources
 directory.  For convenience, this script is also included below.  It sets up the
