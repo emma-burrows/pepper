@@ -9,9 +9,10 @@ Pepper is a web application that connects to a drug database.  It uses
 technologies such as Java EE, JAXB, Maven, Spring and Hibernate.  It's fully
 compatible with Jenkins for continuous integration and the source code is
 hosted on GitHub.  There's a continuous deployment server for Pepper hosted on
-CloudBees.  This responds to GitHub hooks to trigger Jenkins builds after every
-commit to the master branch.  After each successful build, the web application
-is redeployed to http://pepper.rlaidlaw.cloudbees.net.
+CloudBees at https://rlaidlaw.ci.cloudbees.com.  This responds to GitHub hooks
+to trigger Jenkins builds after every commit to the master branch.  After each
+successful build, the web application is redeployed to
+http://pepper.rlaidlaw.cloudbees.net.
 
 
 Installation
