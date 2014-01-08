@@ -11,6 +11,12 @@ import com.pepper.domain.DrugEntity;
 public interface DrugDao
 {
   /**
+   * Saves a drug record to the database.
+   * @param drugEntity the drug entity to save to the database
+   */
+  public void save(DrugEntity drugEntity);
+
+  /**
    * Gets a list of all drugs with names like the supplied String.
    * @param name the name to match
    * @return a list of DrugEntity objects that have names like the supplied
@@ -29,4 +35,10 @@ public interface DrugDao
    * @return a count of the number of drugs stored in the database
    */
   public long getCount();
+
+  /**
+   * Deletes a drug record from the database.
+   * @param drugEntity the drug entity to delete from the database
+   */
+  public void delete(DrugEntity drugEntity);
 }

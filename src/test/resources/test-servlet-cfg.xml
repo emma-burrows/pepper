@@ -12,11 +12,14 @@
     http://www.springframework.org/schema/mvc/spring-mvc.xsd
     http://www.springframework.org/schema/tx
     http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
-  
+
+  <mvc:annotation-driven/>
+
   <context:component-scan base-package="com.pepper"/>
 
   <!-- Database properties. -->
-  <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+  <bean
+    class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
     <property name="location">
       <value>classpath:test.database.properties</value>
     </property>
@@ -58,5 +61,5 @@
     <property name="prefix" value="/WEB-INF/jsp/"/>
     <property name="suffix" value=".jsp"/>
   </bean>
-  
+
 </beans>
